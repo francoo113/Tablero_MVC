@@ -30,13 +30,13 @@ namespace Tablero_MVC.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IDTablero { get; set; }
 
-        //evaluar objetos virtuales?
-        public virtual List<Tarea> Tareas { get; set; }
+     
+        public List<Tarea> Tareas { get; set; }
 
         //La llave FK se define con el nombre de la PK de la clase Usuario
         [ForeignKey("IDUsuario")]
-        //Objeto virtual, Tablero tiene un Usuario
-        public virtual Usuario Usuario { get; set; }
+
+        public Usuario Usuario { get; set; }
 
     }
 }

@@ -1,0 +1,26 @@
+﻿/*agrego hoja de estilos para el Home*/
+
+body {
+    font-family: 'Comic Sans MS', cursive;
+    background-color: #00ff90;
+    text-align: center;
+}
+
+h1 {
+    color: #0094ff;
+}
+
+p {
+    color: #b56bc7;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+
+.container {
+    background-color: #fd5ee7;
+    border-radius: 10px;
+    margin: 100px auto;
+    padding: 20px;
+    width: 500px;
+}

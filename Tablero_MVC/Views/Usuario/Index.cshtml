@@ -4,6 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
+<head>
+    <link rel="stylesheet" href="~/css/usuario.css" />
+</head>
+
 <h1>Registro de usuarios</h1>
 
 <p>
@@ -28,26 +32,27 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Apellido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Institucion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mail)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IDUsuario">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.IDUsuario">Detalles</a> |
-                <a asp-action="Delete" asp-route-id="@item.IDUsuario">Eliminar</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Institucion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mail)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IDUsuario">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.IDUsuario">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IDUsuario">Eliminar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -1,0 +1,32 @@
+﻿/* estilos.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFC0CB; /* Color de fondo claro */
+    margin: 0; /* Elimina el margen predeterminado del cuerpo */
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px; /* Agrega un margen superior a la tabla */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+a {
+    color: #3498db; /* Cambia el color del enlace a azul claro */
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }

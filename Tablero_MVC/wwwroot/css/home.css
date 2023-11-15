@@ -9,16 +9,27 @@ body {
     text-align: center;
     background-image: url("https://images.pexels.com/photos/5208348/pexels-photo-5208348.jpeg");
     background-size: cover;
+    /*agrego alineacion*/
+    background-position: center;
+    background-repeat: no-repeat;
 }
 /*#00ff90*/
 h1 {
     color: #0094ff;
 }
-
+/*
 p {
     color: #3f3939;
     font-size: 18px;
     line-height: 1.5;
+
+    cambio tamanio, color, font...
+}*/
+p {
+    color: #a6a1b1f2;
+    font-size: 20px;
+    line-height: 1.8;
+    font-family: Calibri, cursive;
 }
 
 /*adios fondo violeta del container*/

@@ -21,9 +21,9 @@ p {
     line-height: 1.5;
 }
 
-
+/*adios fondo violeta del container*/
 .container {
-    background-color: #ca2ac3;
+    /*background-color: #ca2ac3;*/
     border-radius: 10px;
     margin: 100px auto;
     padding: 20px;

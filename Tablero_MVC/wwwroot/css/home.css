@@ -1,10 +1,14 @@
 ﻿/*agrego hoja de estilos para el Home*/
 /*Modifique la letra y le baje el tono al color*/
 
+/*perdon Gi, saqué el fondo de color y agregué una imágen*/
+
 body {
     font-family: Cambria, cursive;
-    background-color: #6cbd11;
+    /*  background-color: #6cbd11;*/
     text-align: center;
+    background-image: url("https://images.pexels.com/photos/5208348/pexels-photo-5208348.jpeg");
+    background-size: cover;
 }
 /*#00ff90*/
 h1 {

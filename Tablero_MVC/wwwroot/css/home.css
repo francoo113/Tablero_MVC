@@ -1,7 +1,8 @@
 ﻿/*agrego hoja de estilos para el Home*/
+/*Modifique la letra y le baje el tono al color*/
 
 body {
-    font-family: 'Comic Sans MS', cursive;
+    font-family: Arial, cursive;
     background-color: #00ff90;
     text-align: center;
 }
@@ -11,16 +12,17 @@ h1 {
 }
 
 p {
-    color: #b56bc7;
+    color: #3f3939;
     font-size: 18px;
     line-height: 1.5;
 }
 
 
 .container {
-    background-color: #fd5ee7;
+    background-color: #ca2ac3;
     border-radius: 10px;
     margin: 100px auto;
     padding: 20px;
     width: 500px;
 }
+/*#fd5ee7*/

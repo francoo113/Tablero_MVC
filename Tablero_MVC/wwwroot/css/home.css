@@ -2,7 +2,7 @@
 /*Modifique la letra y le baje el tono al color*/
 
 body {
-    font-family: Arial, cursive;
+    font-family: Cambria, cursive;
     background-color: #00ff90;
     text-align: center;
 }

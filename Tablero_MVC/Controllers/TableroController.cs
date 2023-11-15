@@ -44,16 +44,39 @@ namespace Tablero_MVC.Controllers
 
             return View(tablero);
         }
+        /*
+                // GET: Tablero/Create
+                public IActionResult Create()
+                {
+                    return View();
+                }
+
+                // POST: Tablero/Create
+                // To protect from overposting attacks, enable the specific properties you want to bind to.
+                // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+                [HttpPost]
+                [ValidateAntiForgeryToken]
+                public async Task<IActionResult> Create([Bind("IDTablero")] Tablero tablero)
+                {
+                    if (ModelState.IsValid)
+                    {
+                        _context.Add(tablero);
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(Index));
+                    }
+                    return View(tablero);
+                }*/
+
+        //Lo que hace este cambio es: cuando crea el tablero, nos lleva a la pantalla para crear la tarea
+        //Sigue en modo "prueba", por eso dejo comentado el codigo original arriba.
 
         // GET: Tablero/Create
         public IActionResult Create()
         {
-            return View();
+            return RedirectToAction("Create", "Tarea");
         }
 
         // POST: Tablero/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IDTablero")] Tablero tablero)
@@ -66,6 +89,8 @@ namespace Tablero_MVC.Controllers
             }
             return View(tablero);
         }
+
+        //HASTA ACA el cambio antes mencionado.
 
         // GET: Tablero/Edit/5
         public async Task<IActionResult> Edit(int? id)

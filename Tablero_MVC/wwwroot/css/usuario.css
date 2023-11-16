@@ -74,3 +74,17 @@ a {
     a:hover {
         text-decoration: underline;
     }
+
+.boton p {
+    text-decoration: none;
+    background-color: skyblue;
+    color: white;
+    padding: 1px 20px;
+    border: dashed;
+    border-radius: 1px;
+    margin-top: 1px;
+    min-width: 50px;
+    max-width: 125px;
+}
+
+}

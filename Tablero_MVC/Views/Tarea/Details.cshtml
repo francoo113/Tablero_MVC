@@ -4,33 +4,34 @@
     ViewData["Title"] = "Details";
 }
 
+<link rel="stylesheet" type="text/css" href="/css/tarea.css">
 <h1>Detalles</h1>
 
 <div>
-    <h4>Tarea</h4>
+    <h6>Aquí se muestran los detalles de la tarea seleccionada:</h6>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.EstadoTarea)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.EstadoTarea)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Descripcion)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Descripcion)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Titulo)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Titulo)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.IDTarea">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model?.IDTarea">Editar</a> |
     <a asp-action="Index">Volver</a>
 </div>

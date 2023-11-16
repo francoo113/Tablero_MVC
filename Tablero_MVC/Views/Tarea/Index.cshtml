@@ -3,13 +3,8 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<head>
-    <link rel="stylesheet" href="~/css/usuario.css" />
-</head>
-
-
-<h1>Index de tareas</h1>
+<link rel="stylesheet" type="text/css" href="/css/tarea.css">
+<h1>Mis tareas</h1>
 
 <p>
     <a asp-action="Create">Crear nueva</a>
@@ -45,7 +40,7 @@
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.IDTarea">Editar</a> |
                     <a asp-action="Details" asp-route-id="@item.IDTarea">Detalles</a> |
-                    <a asp-action="Delete" asp-route-id="@item.IDTarea">Eliminar</a>
+                    <a asp-action="Delete" asp-route-id="@item.IDTarea">Borrar</a>
                 </td>
             </tr>
         }

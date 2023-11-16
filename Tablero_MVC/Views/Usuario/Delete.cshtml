@@ -3,43 +3,46 @@
 @{
     ViewData["Title"] = "Delete";
 }
+<link rel="stylesheet" type="text/css" href="/css/usuario.css">
+<h1>Borrar</h1>
 
-<h1>Eliminar</h1>
-
-<h3>Estas seguro de eliminar?</h3>
+<h6>
+    Estas seguro que deseas eliminar tu cuenta?
+    (Te vamos a extañar) &#128546;
+</h6>
 <div>
-    <h4>Usuario</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Nombre)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Nombre)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Apellido)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Apellido)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Institucion)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Institucion)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Mail)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Mail)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="IDUsuario" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <input type="submit" value="Borrar" class="btn btn-danger" /> |
         <a asp-action="Index">Volver</a>
     </form>
 </div>
+

@@ -3,10 +3,10 @@
 @{
     ViewData["Title"] = "Create";
 }
+<link rel="stylesheet" type="text/css" href="/css/usuario.css">
+<h1>Comencemos...</h1>
 
-<h1>Crear</h1>
-
-<h4>Usuario</h4>
+<h6>Te solicitamos completar los siguientes datos:</h6>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -44,5 +44,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

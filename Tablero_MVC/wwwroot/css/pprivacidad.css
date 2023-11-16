@@ -1,0 +1,16 @@
+﻿body {
+    font-family: Cambria, cursive;
+    background-color: papayawhip;
+    text-align: center;
+}
+
+p {
+    color: #a6a1b1f2;
+    font-size: 20px;
+    line-height: 1.8;
+    font-family: Calibri, cursive;
+}
+
+h1 {
+    color: #0094ff;
+}

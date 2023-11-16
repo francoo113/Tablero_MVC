@@ -1,0 +1,20 @@
+﻿body {
+    background-image: url("https://images.pexels.com/photos/15505474/pexels-photo-15505474/free-photo-of-notas-notas-adhesivas-publicalo-tiro-vertical.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.titulo {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    color: coral;
+    line-height: 1;
+    font-family: Tahoma, Verdana, Sans-serif;
+    font-size: 60px;
+}
+
+!important
+.boton {
+    color: floralwhite;
+}

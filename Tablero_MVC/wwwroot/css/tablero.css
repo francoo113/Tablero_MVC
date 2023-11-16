@@ -14,7 +14,33 @@
     font-size: 60px;
 }
 
-!important
+/*!important
 .boton {
     color: floralwhite;
+}*/
+
+.boton p a {
+    text-decoration: none;
+    background-color: coral;
+    color: white;
+    padding: 10px 70px;
+    border: dashed;
+    border-radius: 15px;
+    display: inline-block;
+    margin-top: 1px;
+}
+
+.boton:hover  {
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
+
 }

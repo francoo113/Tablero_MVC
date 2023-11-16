@@ -7,7 +7,7 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Crear</a>
 </p>
 @* Agregue el nav del layout en el index de Tablero *@
 <li class="nav-item">
@@ -23,9 +23,9 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IDTablero">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IDTablero">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IDTablero">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.IDTablero">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.IDTablero">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.IDTablero">Eliminar</a>
             </td>
         </tr>
 }

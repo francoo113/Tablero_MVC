@@ -3,56 +3,77 @@
 @{
     ViewData["Title"] = "Index";
 }
+<link rel="stylesheet" type="text/css" href="/css/usuario.css">
+<h1>Registro</h1>
+<h6>Crea tu cuenta gratuita!</h6>
+<div class="textoIndex">
+    <p>
+        <br />
+        Ya no será necesario recurrir a agendas, ni pizarrones.
 
-<head>
-    <link rel="stylesheet" href="~/css/usuario.css" />
-</head>
+        <br />
+        Muy simple y a tu estilo, podrás agregarle los detalles que necesites
 
-<h1>Registro de usuarios</h1>
+        <br />
+        Modificar su estado... desde su análisis hasta que las completes
 
-<p>
-    <a asp-action="Create">Crear nuevo usuario</a>
-</p>
+        <br />
+        Todas tus tareas se guardarán, para que puedas continuarlas cuando desees
+
+        <br />
+        Nunca fue tan fácil llegar a tus objetivos!
+        <br />
+        <br />
+
+    </p>
+    <h4>Únete a la comunidad Tabler6 y, comienza a planificar!</h4>
+    <p>
+        <a asp-action="Create">Comenzar</a>
+    </p>
+</div>
+
 <table class="table">
+    @*para que no muestre la tabla hasta que haga click en comenzar
+
     <thead>
+    <tr>
+    <th>
+    @Html.DisplayNameFor(model => model.Nombre)
+    </th>
+    <th>
+    @Html.DisplayNameFor(model => model.Apellido)
+    </th>
+    <th>
+    @Html.DisplayNameFor(model => model.Institucion)
+    </th>
+    <th>
+    @Html.DisplayNameFor(model => model.Mail)
+    </th>
+    <th></th>
+    </tr>
+    </thead>*@
+
+    @foreach (var item in Model)
+    {
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Apellido)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Institucion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Mail)
-            </th>
-            <th></th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Institucion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mail)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IDUsuario">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.IDUsuario">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.IDUsuario">Borrar</a>
+            </td>
         </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nombre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Apellido)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Institucion)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Mail)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.IDUsuario">Editar</a> |
-                    <a asp-action="Details" asp-route-id="@item.IDUsuario">Detalles</a> |
-                    <a asp-action="Delete" asp-route-id="@item.IDUsuario">Eliminar</a>
-                </td>
-            </tr>
-        }
-    </tbody>
+    }
+    </>
 </table>

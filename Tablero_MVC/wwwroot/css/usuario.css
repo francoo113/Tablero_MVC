@@ -1,9 +1,44 @@
 ﻿/* estilos.css */
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #FFC0CB; /* Color de fondo claro */
+    font-family: Cambria, cursive;
+    /*  background-color: #FFC0CB;  Color de fondo claro */
     margin: 0; /* Elimina el margen predeterminado del cuerpo */
+    background-image: url("https://images.pexels.com/photos/5208348/pexels-photo-5208348.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    color: #0094ff;
+}
+
+h4 {
+    color: #0094ff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+h6 {
+    color: #808080ff;
+    font-size: 20px;
+    line-height: 1.8;
+    font-family: Calibri, cursive;
+    text-align: left;
+}
+
+p {
+    color: #a6a1b1f2;
+    font-size: 20px;
+    line-height: 1.8;
+    font-family: Calibri, cursive;
+    text-align: left;
+}
+
+.textoIndex {
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 5px;
+    width: 900px;
 }
 
 table {

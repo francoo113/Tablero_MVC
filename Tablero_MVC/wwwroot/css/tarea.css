@@ -1,0 +1,12 @@
+﻿body {
+    background-image: url("https://images.pexels.com/photos/7319176/pexels-photo-7319176.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+}
+
+.btn {
+    border-radius: 6px;
+    background-color: dimgrey;
+    color: lightgrey;
+    font-size: 14px;
+    padding: 5px 10px;
+    margin-top: 5px;
+}

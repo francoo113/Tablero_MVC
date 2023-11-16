@@ -4,44 +4,50 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Crear</h1>
+<link rel="stylesheet" type="text/css" href="/css/tarea.css">
+<body>
+    <h1>Crear</h1>
 
-<h4>Tarea</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <h4>Tarea</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <fieldset>
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <div class="form-group">
-                <label asp-for="EstadoTarea" class="control-label"></label>
-                @*Aca modifique esto es lo q no permitia q aparezcan los estados*@
-                <select asp-for="EstadoTarea" asp-items="Html.GetEnumSelectList<Tablero_MVC.Models.Estado>()" class="form-control"></select>
-                <span asp-validation-for="EstadoTarea" class="text-danger"></span>
-            </div>
+                    <div class="form-group">
+                        <label asp-for="EstadoTarea" class="control-label"></label>
 
-            <div class="form-group">
-                <label asp-for="Descripcion" class="control-label"></label>
-                <input asp-for="Descripcion" class="form-control" />
-                <span asp-validation-for="Descripcion" class="text-danger"></span>
-            </div>
+                        @*Aca modifique esto es lo q no permitia q aparezcan los estados*@
+                        <select asp-for="EstadoTarea" asp-items="Html.GetEnumSelectList<Tablero_MVC.Models.Estado>()" class="form-control"></select>
+                        <span asp-validation-for="EstadoTarea" class="text-danger"></span>
+                    </div>
 
-            <div class="form-group">
-                <label asp-for="Titulo" class="control-label"></label>
-                <input asp-for="Titulo" class="form-control" />
-                <span asp-validation-for="Titulo" class="text-danger"></span>
-            </div>
+                    <div class="form-group">
+                        <label asp-for="Descripcion" class="control-label"></label>
+                        <input asp-for="Descripcion" class="form-control" />
+                        <span asp-validation-for="Descripcion" class="text-danger"></span>
+                    </div>
 
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+                    <div class="form-group">
+                        <label asp-for="Titulo" class="control-label"></label>
+                        <input asp-for="Titulo" class="form-control" />
+                        <span asp-validation-for="Titulo" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Crear" class="btn btn-primary" />
+                    </div>
+                </form>
+            </fieldset>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</body>
 
 @section Scripts {
     @{

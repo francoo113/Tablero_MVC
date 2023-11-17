@@ -28,10 +28,15 @@ namespace Tablero_MVC.Models
         //Para que la ID sea autoincrementable
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IDUsuario { get; set; }
+
+
+        [Required(ErrorMessage ="Carga el nombre")] 
         public string Nombre { get; set; }
         public string Apellido { get; set; }
+        [Display(Name ="Institución")]
         public string Institucion { get; set; }
         public string Mail { get; set; }
+
 
     }
 }

@@ -80,6 +80,12 @@ namespace Tablero_MVC.Controllers
             {
                 return NotFound();
             }
+            //guardar valor actual: https://www.tiracodigo.com/index.php/programacion/mvc/formas-de-almacenar-datos-temporales-en-asp-net-mvc-viewdata-viewbag-tempdata-y-session
+       
+            
+                System.Web.HttpContext.Current.Session["valorAnterior "] = "Pedro Pérez";
+            
+            
             return View(tarea);
         }
 
@@ -96,7 +102,7 @@ namespace Tablero_MVC.Controllers
             }
 
             if (ModelState.IsValid)
-            {
+            {//Aqui hacemos validacion estado. Retorna un View(tarea) si no es valido
                 try
                 {
                     _context.Update(tarea);

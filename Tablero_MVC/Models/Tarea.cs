@@ -28,12 +28,18 @@ namespace Tablero_MVC.Models
         //Para que la ID sea autoincrementable
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IDTarea { get; set; }
+        //Este es cambio
+        [Display(Name = "Estado")]
         [EnumDataType(typeof(Estado))]
         public Estado EstadoTarea { get; set; }
+        //Este es cambio
+        [Display(Name = "Descripción")]
         public string Descripcion { get; set; }
+        //Este es cambio
+        [Display(Name = "Título")]
         public string Titulo { get; set; }
 
-       // public List<Tarea> tareas { get; set; }
+        // public List<Tarea> tareas { get; set; }
 
 
         /*

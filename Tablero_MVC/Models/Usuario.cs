@@ -30,11 +30,14 @@ namespace Tablero_MVC.Models
         public int IDUsuario { get; set; }
 
 
-        [Required(ErrorMessage ="Carga el nombre")] 
+        //este es cambio, en el orig dice CARGA
+        [Required(ErrorMessage = "Ingresa el nombre")]
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        [Display(Name ="Institución")]
+        [Display(Name = "Institución")]
         public string Institucion { get; set; }
+        //este es cambio
+        [Display(Name = "Correo electrónico")]
         public string Mail { get; set; }
 
 

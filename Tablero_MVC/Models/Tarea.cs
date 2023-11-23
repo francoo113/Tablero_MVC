@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -38,6 +39,25 @@ namespace Tablero_MVC.Models
         //Este es cambio
         [Display(Name = "Título")]
         public string Titulo { get; set; }
+
+        //esto para no mostrar los enums anteriores
+        public IEnumerable<SelectListItem> GetFilteredEstadoSelectList()
+        {
+
+            int estadoActualOrdinal = (int)EstadoTarea;
+
+
+            var filteredStates = Enum.GetValues(typeof(Estado))
+                .Cast<Estado>()
+                .Where(e => (int)e >= estadoActualOrdinal)
+                .Select(e => new SelectListItem
+                {
+                    Value = ((int)e).ToString(),
+                    Text = e.ToString()
+                });
+
+            return filteredStates;
+        }
 
         // public List<Tarea> tareas { get; set; }
 

@@ -83,7 +83,7 @@ namespace Tablero_MVC.Controllers
             //guardar valor actual: https://www.tiracodigo.com/index.php/programacion/mvc/formas-de-almacenar-datos-temporales-en-asp-net-mvc-viewdata-viewbag-tempdata-y-session
        
             
-                System.Web.HttpContext.Current.Session["valorAnterior "] = "Pedro Pérez";
+                //System.Web.HttpContext.Current.Session["valorAnterior "] = "Pedro Pérez";
             
             
             return View(tarea);

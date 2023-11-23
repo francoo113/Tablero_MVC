@@ -32,11 +32,18 @@ namespace Tablero_MVC.Models
 
         //este es cambio, en el orig dice CARGA
         [Required(ErrorMessage = "Ingresa el nombre")]
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
+           public string Nombre { get; set; }
+
+        [Required(ErrorMessage = "Ingresa el apellido")]
+          public string Apellido { get; set; }
+
         [Display(Name = "Institución")]
+
+        [Required(ErrorMessage = "Ingrese la institución")]
         public string Institucion { get; set; }
         //este es cambio
+
+        [Required(ErrorMessage = "Ingrese un correo electronico válido")]
         [Display(Name = "Correo electrónico")]
         public string Mail { get; set; }
 

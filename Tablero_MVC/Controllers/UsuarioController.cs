@@ -109,6 +109,8 @@ namespace Tablero_MVC.Controllers
         // POST: Usuario/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
+        //LO MISMO DE CREATE EN EL EDIT, CUESTION QUE NO PUEDA DUPLICAR MAIL SI EDITA
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IDUsuario,Nombre,Apellido,Institucion,Mail")] Usuario usuario)
@@ -120,23 +122,35 @@ namespace Tablero_MVC.Controllers
 
             if (ModelState.IsValid)
             {
-                try
+
+                var existeEmail = await _context.Usuarios.AnyAsync(u => u.Mail == usuario.Mail && u.IDUsuario != id);
+                if (existeEmail)
                 {
-                    _context.Update(usuario);
-                    await _context.SaveChangesAsync();
+
+                    TempData["ErrorEmail"] = "El correo electrónico ya está registrado.";
                 }
-                catch (DbUpdateConcurrencyException)
+                else
                 {
-                    if (!UsuarioExists(usuario.IDUsuario))
+                    try
                     {
-                        return NotFound();
+                        _context.Update(usuario);
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(Index));
                     }
-                    else
+                    catch (DbUpdateConcurrencyException)
                     {
-                        throw;
+                        if (!UsuarioExists(usuario.IDUsuario))
+                        {
+
+                            return NotFound();
+
+                        }
+                        else
+                        {
+                            throw;
+                        }
                     }
                 }
-                return RedirectToAction(nameof(Index));
             }
             return View(usuario);
         }

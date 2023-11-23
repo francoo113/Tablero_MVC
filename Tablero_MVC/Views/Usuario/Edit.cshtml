@@ -34,6 +34,11 @@
                 <span asp-validation-for="Mail" class="text-danger"></span>
                 <span id="emailError" style="color:orangered;"></span>
             </div>
+            @*mismo mensaje que en create, si duplica el mail*@
+            @if (TempData["ErrorEmail"] != null)
+            {
+                <div class="alert alert-danger">@TempData["ErrorEmail"]</div>
+            }
             <div class="form-group">
                 <input type="submit" value="Guardar" class="btn btn-primary" />
             </div>

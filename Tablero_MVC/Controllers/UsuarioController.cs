@@ -22,9 +22,9 @@ namespace Tablero_MVC.Controllers
         // GET: Usuario
         public async Task<IActionResult> Index()
         {
-              return _context.Usuarios != null ? 
-                          View(await _context.Usuarios.ToListAsync()) :
-                          Problem("Entity set 'TableroDBContext.Usuarios'  is null.");
+            return _context.Usuarios != null ?
+                        View(await _context.Usuarios.ToListAsync()) :
+                        Problem("Entity set 'TableroDBContext.Usuarios'  is null.");
         }
 
         // GET: Usuario/Details/5
@@ -54,12 +54,35 @@ namespace Tablero_MVC.Controllers
         // POST: Usuario/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        /*  [HttpPost]
+          [ValidateAntiForgeryToken]
+          public async Task<IActionResult> Create([Bind("IDUsuario,Nombre,Apellido,Institucion,Mail")] Usuario usuario)
+          {
+              if (ModelState.IsValid)
+              {
+                  _context.Add(usuario);
+                  await _context.SaveChangesAsync();
+                  return RedirectToAction(nameof(Index));
+              }
+              return View(usuario);
+          }*/
+        //ESTA MODIF PARA EL MAIL
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IDUsuario,Nombre,Apellido,Institucion,Mail")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
+                // Verificar si el correo electrónico ya existe en la base de datos
+                var existeEmail = await _context.Usuarios.AnyAsync(u => u.Mail == usuario.Mail);
+                if (existeEmail)
+                {
+                    // El correo electrónico ya está registrado
+                    TempData["ErrorEmail"] = "El correo electrónico ya está registrado.";
+                    return View(usuario);
+                }
+
+                // Agregar el usuario a la base de datos
                 _context.Add(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -150,14 +173,14 @@ namespace Tablero_MVC.Controllers
             {
                 _context.Usuarios.Remove(usuario);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool UsuarioExists(int id)
         {
-          return (_context.Usuarios?.Any(e => e.IDUsuario == id)).GetValueOrDefault();
+            return (_context.Usuarios?.Any(e => e.IDUsuario == id)).GetValueOrDefault();
         }
     }
 }

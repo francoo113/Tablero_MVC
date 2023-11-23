@@ -31,8 +31,12 @@
                 <label asp-for="Mail" class="control-label"></label>
                 <input asp-for="Mail" class="form-control" id="mailInput" />
                 <span asp-validation-for="Mail" class="text-danger"></span>
-                <span id="emailError" style="color:orangered;"></span> 
+                <span id="emailError" style="color:orangered;"></span>
             </div>
+            @if (TempData["ErrorEmail"] != null)
+            {
+                <div class="alert alert-danger">@TempData["ErrorEmail"]</div>
+            }
             <div class="form-group">
                 <input type="submit" value="Crear" class="btn btn-primary" />
             </div>
@@ -47,8 +51,7 @@
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
-       
+
     }
     <script src="/js/usuario.js?asp-append-version=true"></script>
-   }
- 
+}
